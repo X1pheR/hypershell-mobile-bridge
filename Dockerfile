@@ -24,5 +24,6 @@ COPY --from=build /app/out /app/site
 ENV PYTHONPATH="/app/site" \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
+USER 65532:65532
 ENTRYPOINT ["/usr/bin/python"]
 CMD ["-m", "hypershell_mobile_bridge.service"]

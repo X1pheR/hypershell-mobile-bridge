@@ -8,4 +8,4 @@ This repository owns the generic Hypershell Mobile Bridge application. Deploymen
 4. Keep public reverse-WSS and private control listeners separate. The control listener is loopback-only in the accepted OCI topology and still requires its own bearer token.
 5. Add tests for every session/auth/reconnect or operation-contract change.
 6. Run `scripts/verify.sh` against the exact candidate when `uv` is available; on Docker-only hosts use `scripts/verify-container.sh`, which runs the same frozen checks in the digest-pinned builder.
-7. Do not initialize Git before the governed first-release transition.
+7. This product has completed its first release. Develop later changes locally, verify the exact candidate before publication, and never rewrite an accepted release tag to retrofit later documentation or behavior.
