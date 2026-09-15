@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hypershell-mobile-bridge"
+version = "0.1.0"
+description = "On-demand reverse WebSocket control bridge for Hypershell mobile device control"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+  "aiohttp==3.14.3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=9.0.3,<10",
+  "pytest-asyncio>=1.3,<2",
+]
+
+[project.scripts]
+hypershell-mobile-bridge = "hypershell_mobile_bridge.service:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hypershell_mobile_bridge"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
